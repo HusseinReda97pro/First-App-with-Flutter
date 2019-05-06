@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './Product_manager.dart';
 
 void main() => runApp(MyApp());
 
@@ -6,27 +7,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: Colors.deepOrange,
+        accentColor: Colors.deepPurple
+      ),
       home: Scaffold(
           appBar: AppBar(
             title: Text('List'),
           ),
-          body: Column(children: <Widget>[
-            Container(
-              margin: EdgeInsets.all(10.0),
-              child: RaisedButton(
-                onPressed: () {},
-                child: Text('Add Product'),
-              ),
-            ),
-            Card(
-              child: Column(
-                children: <Widget>[
-                  Image.asset('assets/burger.png'),
-                  Text('Burger')
-                ],
-              ),
-            ),
-          ])),
+          body: ProductManaer('Burger')),
     );
   }
 }
